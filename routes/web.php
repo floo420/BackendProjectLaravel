@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\CommentController;
 
 
 
@@ -144,5 +145,8 @@ Route::post('password/reset', [ForgotPasswordController::class, 'changePassword'
 Route::get('/forgotPassword', [ForgotPasswordController::class, 'showResetForm'])->name('forgot-password');
 Route::match(['get', 'post'], 'password/reset', [ForgotPasswordController::class, 'showResetForm'])->name('forgot-password');
 
+//comment on newspage
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 
