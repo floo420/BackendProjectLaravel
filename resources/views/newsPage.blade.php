@@ -106,8 +106,8 @@
                              @isset($news->comments)
                                @foreach($news->comments as $comment)
                                 <div class="mb-2">
-                                  <strong>{{ $comment->user->name }}:</strong>
-                                  {{ $comment->comment_text }}
+                                <strong>{{ $comment->user->first_name }}:</strong> 
+                                {{ $comment->comment_text }}
                                 </div>
                               @endforeach
                            @else
