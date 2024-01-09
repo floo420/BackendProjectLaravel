@@ -103,23 +103,28 @@
                         <!-- Comments Section -->
                         <div class="mt-3">
                             <h6>Comments:</h6>
-                            @foreach($news->comments as $comment)
+                             @isset($news->comments)
+                               @foreach($news->comments as $comment)
                                 <div class="mb-2">
-                                    <strong>{{ $comment->user->name }}:</strong>
-                                    {{ $comment->comment_text }}
+                                  <strong>{{ $comment->user->name }}:</strong>
+                                  {{ $comment->comment_text }}
                                 </div>
-                            @endforeach
+                              @endforeach
+                           @else
+                                <p>No comments available.</p>
+                          @endisset
 
-                            <!-- Comment Form -->
-                            <form action="{{ route('comments.store') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="news_id" value="{{ $news->id }}">
-                                <div class="form-group">
-                                    <textarea name="comment_text" class="form-control" rows="3" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Add Comment</button>
-                            </form>
+                        <!-- Comment Form -->
+                          <form action="{{ route('comments.store') }}" method="POST">
+                           @csrf
+                         <input type="hidden" name="news_id" value="{{ $news->id }}">
+                         <div class="form-group">
+                        <textarea name="comment_text" class="form-control" rows="3" required></textarea>
                         </div>
+                         <button type="submit" class="btn btn-primary">Add Comment</button>
+                         </form>
+                      </div>
+
                     </div>
                 </div>
             </div>
