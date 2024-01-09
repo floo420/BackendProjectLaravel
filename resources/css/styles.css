@@ -1,0 +1,501 @@
+body {
+    font-family: "Century Gothic", 'Lato', sans-serif;
+    background-color: #F5F5F5;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*header*/
+
+/* Example CSS for the slideshow */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    max-width: 1180px;
+    max-height: 650px;
+    height: auto;
+    margin: auto;
+    
+}
+
+/*png image container*/
+.png-image-container {
+    position: absolute;
+    top: 0;
+    right: -9.5%;
+    width: 30%; /* Adjust the width as needed */
+    height: 60%;
+    display: flex;
+    justify-content: flex-end; /* Align the image to the right */
+    align-items: center; /* Vertically center the image */
+    padding: 20px; /* Add some padding for spacing */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+.png-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    /* Change this value to adjust the vertical position */
+    top: 420px;
+    right: 0;
+    position: absolute;
+    justify-content: flex-end;
+}
+
+
+/* Add fade effect */
+.fade {
+    animation-name: fade;
+    animation-duration: 5s; /* Change this value to control slide duration */
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*discover thailand button*/
+:root {
+    --dark: hsl(199, 33%, 15%);
+  }
+  
+  .button {
+    position: absolute;
+    bottom: 20px; /* Adjust the vertical position */
+    right: 150px; /* Adjust the horizontal position */
+    
+    --bouncing-offset: 0.35em;
+    --bg: 241, 29%, 30%; /* #071D7D in HSL */
+  
+    background-color: hsl(var(--bg));
+    color: white; /* White text color for good contrast */
+  
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.8em;
+  
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+  
+    cursor: pointer;
+    box-shadow: 0 var(--bouncing-offset) 0 0 hsla(0, 100%, 50%, 0.4), 0 -0.2em 0.2em hsla(0, 100%, 50%, 0.4); /* Red shadow color */
+}
+
+.button:active,
+.button:focus-visible {
+    transform: translateY(var(--bouncing-offset));
+    box-shadow: none;
+}
+
+
+
+
+  
+  
+
+/*thumbnail container*/
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #ccc; /* Default color */
+}
+
+.thumbnail img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid transparent;
+}
+
+.thumbnail.active img {
+    border-color: #66B1F1;
+}
+
+
+
+.intro {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    position: relative;
+    background: #004080;
+    text-align: center;
+    padding: 0 2em;
+}
+.et-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background: #eee;
+    text-align: center;
+    padding: 0 2em;
+}
+
+.et-hero-tabs h1 {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1rem;
+}
+
+.et-hero-tabs h3 {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.6;
+}
+
+.intro-h1 {
+    font-size: 1.8rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 0;
+    letter-spacing: 1rem;
+}
+
+.intro-h3 {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    opacity: 0.6;
+}
+
+.et-hero-tabs-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: #F5F5F5;
+    z-index: 10;
+}
+
+.et-hero-tabs-container--top {
+    position: fixed;
+    top: 0;
+}
+
+.et-hero-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #000;
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 0.8rem;
+}
+
+.et-hero-tab:hover {
+    color: white;
+    background: rgba(102, 177, 241, 0.8);
+    transition: all 0.5s ease;
+}
+
+.et-hero-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    background: #66B1F1;
+    transition: left 0.3s ease;
+}
+
+
+
+@media (min-width: 800px) {
+    .et-hero-tabs h1 {
+        font-size: 3rem;
+    }
+
+    .et-hero-tabs h3 {
+        font-size: 1rem;
+    }
+
+    .et-hero-tab {
+        font-size: 1rem;
+    }
+}
+
+/*Section background color*/
+#tab-es6 {
+    background-image: url('images/PropretiesIMG.JPG'); /* Replace with the actual path to your image */
+    background-size: cover; /* Adjust the sizing of the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center center; /* Position the background image at the center */
+    /* Add any additional styles you want for the section */
+  }
+  #tab-flexbox {
+    background-image: url('images/RentIMG.JPG'); /* Replace with the actual path to your image */
+    background-size: cover; /* Adjust the sizing of the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center center; /* Position the background image at the center */
+    /* Add any additional styles you want for the section */
+  }
+  #tab-react {
+    background-image: url('images/ServicesIMG.JPG'); /* Replace with the actual path to your image */
+    background-size: cover; /* Adjust the sizing of the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center center; /* Position the background image at the center */
+    /* Add any additional styles you want for the section */
+  }
+#tab-angular {
+    background-image: url('images/AbUsIMG.JPG'); /* Replace with the actual path to your image */
+    background-size: cover; /* Adjust the sizing of the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center center; /* Position the background image at the center */
+    /* Add any additional styles you want for the section */
+  }
+  #tab-other {
+    background-image: url('images/abthai.webp'); /* Replace with the actual path to your image */
+    background-size: cover; /* Adjust the sizing of the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center center; /* Position the background image at the center */
+    /* Add any additional styles you want for the section */
+  }
+  .overlay1 {
+    background-image: url('images/black.webp');
+    height: 800px;
+    width: 1500px;
+    opacity: 0.7;
+    position: relative;
+}
+.overlay2 {
+    background-image: url('images/black.webp');
+    height: 800px;
+    width: 1500px;
+    opacity: 0.7;
+    position: relative;
+}
+  .overlay3 {
+    background-image: url('images/black.webp');
+    height: 800px;
+    width: 1500px;
+    opacity: 0.7;
+    position: relative;
+}
+  .overlay4 {
+      background-image: url('images/black.webp');
+      height: 800px;
+      width: 1500px;
+      opacity: 0.7;
+      position: relative;
+  }
+  .overlay5 {
+    background-image: url('images/black.webp');
+    height: 800px;
+    width: 1500px;
+    opacity: 0.7;
+    position: relative;
+}
+
+  .centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*CSS for the cards*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+.cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.card--1 .card__img, .card--1 .card__img--hover {
+    background-image: url('images/PropretiesIMG.JPG');
+}
+
+.card--2 .card__img, .card--2 .card__img--hover {
+    background-image: url('images/RentIMG.JPG');
+}
+.card--3 .card__img, .card--3 .card__img--hover {
+    background-image: url('images/ServicesIMG.JPG');
+}
+.card--4 .card__img, .card--4 .card__img--hover {
+    background-image: url('images/AbUsIMG.JPG');
+}
+.card--5 .card__img, .card--5 .card__img--hover {
+    background-image: url('images/abthai.webp');
+}
+
+.card__like {
+    width: 18px;
+}
+
+.card__clock {
+    width: 15px;
+  vertical-align: middle;
+    fill: #AD7D52;
+}
+.card__time {
+    font-size: 12px;
+    color: #AD7D52;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.card__clock-info {
+    float: right;
+}
+
+.card__img {
+  visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+  
+}
+
+.card__info-hover {
+    position: absolute;
+    padding: 16px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  top: 0;
+  left: 0;
+}
+
+.card__img--hover {
+  transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+  position: absolute;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+top: 0;
+  
+}
+.card {
+  margin-right: 25px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+    width: 600px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+z-index: 2;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+   padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  color: #868686;
+}
+
+.card__title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+.card__by {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+.card:hover .card__img--hover {
+    height: 100%;
+    opacity: 1;
+;
+}
+
+.card:hover .card__info {
+    background-color: transparent;
+    position: relative;
+    color: yellow;
+}
+
+
+.card:hover .card__info-hover {
+    opacity: 1;
+}
+
+
+
+
+  
+
+  
+
+
+
+
