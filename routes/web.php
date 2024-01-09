@@ -148,5 +148,6 @@ Route::match(['get', 'post'], 'password/reset', [ForgotPasswordController::class
 //comment on newspage
 
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
-
+Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
