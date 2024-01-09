@@ -316,7 +316,7 @@ border-bottom-right-radius: 12px;
           <a class="nav-link" href="#tab-flexbox">Rent</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tab-react">Services</a>
+          <a class="nav-link" href="#tab-react">About-us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#tab-angular">FAQ</a>
@@ -431,7 +431,7 @@ border-bottom-right-radius: 12px;
         <section class="et-slide" id="tab-react">
           <div class="overlay3">
             <div class="centered-content">
-          <h1 style="color: white;">Services</h1>
+          <h1 style="color: white;">About-us</h1>
           <div class="cards">
             <article class="card card--3">
               <div class="card__info-hover">
@@ -519,29 +519,34 @@ border-bottom-right-radius: 12px;
         </div>
         </section>
       </main>
-    <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-section about">
-      <h2>About Us</h2>
-      <p>We provide top-quality rental services to meet your needs.</p>
+      <footer class="footer bg-dark text-light pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5 class="text-uppercase mb-4">About Us</h5>
+        <p>We provide top-quality rental services to meet your needs in Thailand.</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5 class="text-uppercase mb-4">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none text-light">Home</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Rentals</a></li>
+          <li><a href="#" class="text-decoration-none text-light">About</a></li>
+          <li><a href="#" class="text-decoration-none text-light">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5 class="text-uppercase mb-4">Contact Us</h5>
+        <p>Email: info@rentalwebsite.com</p>
+        <p>Phone: +1234567890</p>
+      </div>
     </div>
-    <div class="footer-section links">
-      <h2>Quick Links</h2>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Rentals</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
+    <div class="footer-bottom text-center pt-3">
+      &copy; 2023 Rental Website | Designed by YourName
     </div>
-    <div class="footer-section contact">
-      <h2>Contact Us</h2>
-      <p>Email: info@rentalwebsite.com</p>
-      <p>Phone: +1234567890</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2023 Rental Website | Designed by YourName
   </div>
 </footer>
 </body>

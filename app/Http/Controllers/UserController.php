@@ -68,7 +68,7 @@ class UserController extends Controller
         $request->validate([
             'birthdate' => 'nullable|date',
             'about_me' => 'nullable|string',
-            'avatar' => 'nullable|image|max:2048', // Validating for an image file
+            'avatar' => 'nullable|image|max:2048', 
         ]);
     
         // Handle the user's upload
