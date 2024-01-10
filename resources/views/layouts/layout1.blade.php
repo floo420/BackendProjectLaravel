@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation bar</title>
+    <title>@yield('title', 'Your Page Title')</title>
+    <!-- Include your CSS and other head elements here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,6 +16,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav" style="font-size: 20px;">
+        <!-- Navigation links go here -->
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ route('homePageUsers') }}">Home</a>
         </li>
@@ -67,10 +70,7 @@
         <!-- Show Login for guests -->
         <a class="nav-link" href="{{ route('loginPage') }}">Login</a>
     @endguest
-</div>
 
-
-    <div class="navbar-nav ml-auto">
       @auth
         <!-- Dropdown for authenticated users -->
         <div class="nav-item dropdown">
@@ -89,14 +89,19 @@
                  @csrf
                 <button type="submit" class="dropdown-item">Log Out</button>
                 </form>
-         </li>
+            </li>
           </ul>
         </div>
       @else
         <!-- Links for guests like login, register, etc. -->
+        <a class="nav-link" href="#">Register</a>
       @endauth
     </div>
   </div>
 </nav>
+
+@yield('content') <!-- This is where the content of your views will be injected -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

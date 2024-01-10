@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
+    <!-- Include your CSS and other head elements here -->
 </head>
 <body>
 <div class="container">
@@ -16,10 +17,7 @@
       <div class="col-md-4 mb-3">
         <h5 class="text-uppercase mb-4">Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none text-light">Home</a></li>
-          <li><a href="#" class="text-decoration-none text-light">Rentals</a></li>
-          <li><a href="#" class="text-decoration-none text-light">About</a></li>
-          <li><a href="#" class="text-decoration-none text-light">Contact</a></li>
+          <!-- Footer links go here -->
         </ul>
       </div>
 
