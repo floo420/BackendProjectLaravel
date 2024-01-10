@@ -21,19 +21,19 @@
           <a class="nav-link active" aria-current="page" href="{{ route('homePageUsers') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tab-es6">Properties</a>
+          <a class="nav-link" href="{{ route('properties') }}">Properties</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#tab-flexbox">Rent</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tab-react">About-Us</a>
+          <a class="nav-link" href="{{ route('about') }}">About-Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tab-angular">FAQ</a>
+          <a class="nav-link" href="{{ route('faqPage') }}">FAQ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tab-other">News</a>
+          <a class="nav-link" href="{{ route('newsPage') }}">News</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('contact.form') }}">Contact-US</a>
@@ -94,7 +94,7 @@
         </div>
       @else
         <!-- Links for guests like login, register, etc. -->
-        <a class="nav-link" href="#">Register</a>
+        <a class="nav-link" href="{{ route('register') }}">Register</a>
       @endauth
     </div>
   </div>
