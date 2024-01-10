@@ -1,4 +1,4 @@
-@extends('layouts.layout1')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+@extends('layouts.layout1')
 
+@section('title', 'About Us - Thai Condo Rentals')
+
+@section('content')
 <div class="container mt-5">
     <h1 class="text-center">About Us</h1>
     <div class="row mt-4">
@@ -30,7 +34,7 @@
             <img src="path-to-another-image.jpg" alt="Condominium Interior" class="img-fluid rounded">
         </div>
     </div>
-
+    
     <div class="mt-4">
         <h2>Resources Used</h2>
         <ul>
@@ -46,6 +50,7 @@
         &copy; 2023 Thai Condo Rentals | Designed by [Your Name]
     </div>
 </footer>
+@endsection
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
