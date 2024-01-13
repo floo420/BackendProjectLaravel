@@ -13,38 +13,39 @@ class PropertyController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Validate and store property data in the database
-        $validatedData = $request->validate([
-            'condo_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'condo_title' => 'required|string|max:255',
-            'bedrooms' => 'required|integer',
-            'bathrooms' => 'required|integer',
-            'max_occupancy' => 'required|integer',
-            'price' => 'required|numeric',
-            'location' => 'required|string|max:255',
-        ]);
+{
+    // Validation rules for property creation
+    $request->validate([
+        'condo_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'condo_title' => 'required|string|max:255',
+        'bedrooms' => 'required|integer',
+        'bathrooms' => 'required|integer',
+        'max_occupancy' => 'required|integer',
+        'price' => 'required|numeric',
+        'location' => 'required|string|max:255',
+    ]);
 
-        // Upload and store condo picture if provided
-        if ($request->hasFile('condo_picture')) {
-            $imagePath = $request->file('condo_picture')->store('condo_pictures', 'public');
-            $validatedData['condo_picture'] = $imagePath;
-        }
-
-        try {
-            // Create a new property record
-            Property::create($validatedData);
-
-            \Log::info('Property created successfully');
-
-            // Success message
-            return redirect()->route('property.create')->with('success', 'Property created successfully');
-        } catch (\Exception $e) {
-            
-            \Log::error('Property creation failed: ' . $e->getMessage());
-
-            // Error message
-            return redirect()->route('property.create')->with('error', 'Property creation failed');
-        }
+    // Handle file upload (if a condo picture is provided)
+    if ($request->hasFile('condo_picture')) {
+        $imagePath = $request->file('condo_picture')->store('condo_pictures', 'public');
+    } else {
+        $imagePath = null;
     }
+
+    // Create and save the property
+    Property::create([
+        'condo_picture' => $imagePath,
+        'condo_title' => $request->input('condo_title'),
+        'bedrooms' => $request->input('bedrooms'),
+        'bathrooms' => $request->input('bathrooms'),
+        'max_occupancy' => $request->input('max_occupancy'),
+        'price' => $request->input('price'),
+        'location' => $request->input('location'),
+    ]);
+
+    // Log success and redirect
+    \Log::info('Property created successfully');
+    return redirect()->route('property.create')->with('success', 'Property created successfully');
+}
+
 }
