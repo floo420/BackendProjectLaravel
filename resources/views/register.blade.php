@@ -42,7 +42,8 @@
     </style>
 </head>
 <body>
-
+@extends('layouts.layout1')
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -91,7 +92,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-<!-- Bootstrap JS -->
+@endsection
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
