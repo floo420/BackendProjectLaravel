@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+@extends('layouts.layout1')
+@section('content')
 <div class="container mt-5">
     <h2 class="text-center text-primary mb-4">Add Category</h2>
 
@@ -27,6 +29,9 @@
 
     <a href="{{ route('faqPage') }}" class="btn btn-secondary mt-3">Back to FAQ</a>
 </div>
+
+@endsection
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

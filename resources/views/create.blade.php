@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-
+@extends('layouts.layout1')
+@section('content')
 <div class="container">
     <h2>Create a News Item</h2>
     
@@ -41,5 +42,9 @@
         <button type="submit" class="btn btn-primary">Create News</button>
     </form>
 </div>
+
+@endsection
+
+
 </body>
 </html>

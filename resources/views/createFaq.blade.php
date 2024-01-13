@@ -8,6 +8,8 @@
 
 </head>
 <body>
+@extends('layouts.layout1')
+@section('content')
 <div class="container">
     <h2>Create FAQ</h2>
     <form action="{{ route('faqs.store') }}" method="POST">
@@ -31,6 +33,7 @@
         <button type="submit" class="btn btn-primary">Create FAQ</button>
     </form>
 </div>
+@endsection
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
