@@ -35,9 +35,14 @@ class PropertyController extends Controller
             // Create a new property record
             Property::create($validatedData);
 
+            \Log::info('Property created successfully');
+
             // Success message
             return redirect()->route('property.create')->with('success', 'Property created successfully');
         } catch (\Exception $e) {
+            
+            \Log::error('Property creation failed: ' . $e->getMessage());
+
             // Error message
             return redirect()->route('property.create')->with('error', 'Property creation failed');
         }

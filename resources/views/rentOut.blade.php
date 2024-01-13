@@ -33,8 +33,8 @@
             <input type="file" class="form-control" id="condo_picture" name="condo_picture">
         </div>
         <div class="form-group">
-            <label for="name">Property Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <label for="condo_title">Property Name</label>
+            <input type="text" class="form-control" id="condo_title" name="condo_title" required>
         </div>
         <div class="form-group">
             <label for="bedrooms">Bedrooms</label>
