@@ -7,56 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">FLO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav" style="font-size: 20px;">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('homePageUsers') }}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('homePageUsers') }}">Properties</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#tab-flexbox">Rent</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#tab-react">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#tab-angular">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#tab-other">News</a>
-          </li>
-        </ul>
-      </div>
-      <div class="navbar-nav ml-auto">
-      @guest <!-- If the user is not authenticated -->
-          <a class="nav-link" href="{{ route('login') }}">Login</a>
-        @else <!-- If the user is authenticated -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Account
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Account</a>
-            @if(auth()->user() && auth()->user()->is_admin)
-      <!-- Show this dropdown item only if the user is an admin -->
-      <a class="dropdown-item" href="#">Manage users</a>
-  @endif
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Delete Account</a>
-          </div>
-        </div>
-        @endguest
-      </div>
-    </div>
-  </nav>
+@extends('layouts.layout1')
+@section('content')
+
 <div class="container mt-5">
     <h2 class="text-center text-primary mb-4">Frequently Asked Questions</h2>
 
@@ -101,6 +54,7 @@
     </div>
     @endforeach
 </div>
+@endsection
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
