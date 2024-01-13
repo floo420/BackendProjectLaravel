@@ -72,50 +72,25 @@
     <h1 class="sloganH1">Propreties for rent</h1>
     <h3 class="sloganH3">check out the latest propreties.</h3>
 </div>
+  
   <div class="container mt-4">
     <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Property 1">
-          <div class="card-body">
-            <h5 class="card-title">Property 1</h5>
-            <p class="card-text">Bedrooms: 3</p>
-            <p class="card-text">Bathrooms: 2</p>
-            <p class="card-text">Max Occupancy: 6</p>
-            <p class="card-text">Price: $250,000</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- More property cards can go here -->
-      
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Property 2">
-          <div class="card-body">
-            <h5 class="card-title">Property 2</h5>
-            <p class="card-text">Bedrooms: 2</p>
-            <p class="card-text">Bathrooms: 1</p>
-            <p class="card-text">Max Occupancy: 4</p>
-            <p class="card-text">Price: $180,000</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Property 2">
-          <div class="card-body">
-            <h5 class="card-title">Property 2</h5>
-            <p class="card-text">Bedrooms: 2</p>
-            <p class="card-text">Bathrooms: 1</p>
-            <p class="card-text">Max Occupancy: 4</p>
-            <p class="card-text">Price: $180,000</p>
-          </div>
-        </div>
-      </div>
+        @foreach ($properties as $property)
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset('storage/' . $property->condo_picture) }}" class="card-img-top" alt="{{ $property->condo_title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $property->condo_title }}</h5>
+                        <p class="card-text">Bedrooms: {{ $property->bedrooms }}</p>
+                        <p class="card-text">Bathrooms: {{ $property->bathrooms }}</p>
+                        <p class="card-text">Max Occupancy: {{ $property->max_occupancy }}</p>
+                        <p class="card-text">Price: ${{ $property->price }}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
-  </div>
+</div>
 
   @endsection
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

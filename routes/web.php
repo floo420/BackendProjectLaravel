@@ -37,6 +37,8 @@ Route::get('properties', function () {
     return view('properties'); 
 })->name('properties');
 
+Route::get('properties', [PropertyController::class, 'index'])->name('properties');
+
 Route::get('loginPage', function () {
     return view('login'); 
 })->name('loginPage');

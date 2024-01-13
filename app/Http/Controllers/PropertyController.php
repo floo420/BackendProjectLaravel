@@ -48,4 +48,10 @@ class PropertyController extends Controller
     return redirect()->route('property.create')->with('success', 'Property created successfully');
 }
 
+public function index()
+    {
+        $properties = Property::all();
+        return view('properties', compact('properties'));
+    }
+
 }
