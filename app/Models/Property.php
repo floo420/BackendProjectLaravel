@@ -11,7 +11,7 @@ class Property extends Model
 
     protected $fillable = [
         'condo_picture',
-        'condo_tilte',
+        'condo_title',
         'bedrooms',
         'bathrooms',
         'max_occupancy',
