@@ -474,7 +474,7 @@ border-bottom-right-radius: 12px;
                 
               </div>
               <div class="card__img"></div>
-              <a href="RentOut.html" class="card_link">
+              <a href="{{ route('property.create') }}" class="card_link">
                  <div class="card__img--hover"></div>
                </a>
               <div class="card__info">

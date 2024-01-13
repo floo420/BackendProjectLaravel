@@ -12,6 +12,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PropertyController;
+
 
 
 
@@ -151,3 +153,6 @@ Route::post('/comments', [CommentController::class, 'store'])->name('comments.st
 Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
 Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
+//routes for the propreties
+Route::get('/rent-out', [PropertyController::class, 'create'])->name('property.create');
+Route::post('/rent-out', [PropertyController::class, 'store'])->name('property.store');
