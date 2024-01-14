@@ -32,7 +32,7 @@ class PropertySeeder extends Seeder
                 'bathrooms' => 1,
                 'max_occupancy' => 3,
                 'price' => 1500.00,
-                'location' => '6th Avenue',
+                'location' => 'Bangtao',
             ],
             [
                 'condo_picture' => 'condo_pictures/Aristo2.JPG',
@@ -41,7 +41,7 @@ class PropertySeeder extends Seeder
                 'bathrooms' => 1,
                 'max_occupancy' => 4,
                 'price' => 2000.00,
-                'location' => 'Aristo 2',
+                'location' => 'Surin/Bangtao',
             ],
             [
                 'condo_picture' => 'condo_pictures/AristoPatong.JPG',

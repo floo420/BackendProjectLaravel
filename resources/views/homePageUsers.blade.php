@@ -540,7 +540,7 @@ border-bottom-right-radius: 12px;
               <div class="card__info">
                 <span class="card__category"> Travel</span>
                 <h3 class="card__title">Discover the sea</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
+                <span class="card__by"> <a href="#" class="card__author" title="author">...</a></span>
               </div>
             </article>  
           </div>
@@ -570,7 +570,7 @@ border-bottom-right-radius: 12px;
               <div class="card__info">
                 <span class="card__category"> Travel</span>
                 <h3 class="card__title">Discover the sea</h3>
-                <span class="card__by">by <a href="#" class="card__author" title="author">John Doe</a></span>
+                <span class="card__by"> <a href="#" class="card__author" title="author">...</a></span>
               </div>
             </article>  
           </div>
