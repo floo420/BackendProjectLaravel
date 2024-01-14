@@ -70,6 +70,10 @@
         .card-footer {
             background-color: #f8f9fa;
         }
+
+        .converter {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -101,37 +105,63 @@
         </form>
       </div>
   </div>
-</br>
+<div class="container converter">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="number" class="form-control" id="bahtAmount" placeholder="Enter Thai Baht amount">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" onclick="convertBahtToEuro()">Convert</button>
+                </div>
+            </div>
+            <p id="euroResult"></p>
+        </div>
+    </div>
+</div>
+
   <div class="slogans">
     <h2 class="sloganH2">Unlock the Door to Your Ideal Property - Find Your Dream Home Today</h2>
     <h1 class="sloganH1">Propreties for rent</h1>
     <h3 class="sloganH3">check out the latest propreties.</h3>
 </div>
   
-  <div class="container mt-4">
+<div class="container mt-4">
     <div class="row">
         @foreach ($properties as $property)
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ asset('storage/' . $property->condo_picture) }}" class="card-img-top" alt="{{ $property->condo_title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $property->condo_title }}</h5>
-                        <p class="card-text">Bedrooms: {{ $property->bedrooms }}</p>
-                        <p class="card-text">Bathrooms: {{ $property->bathrooms }}</p>
-                        <p class="card-text">Max Occupancy: {{ $property->max_occupancy }}</p>
-                        <p class="card-text">Price: ${{ $property->price }} /Night</p>
-                    </div>
+                    <a href="{{ route('property.show', $property->id) }}">
+                        <img src="{{ asset('storage/' . $property->condo_picture) }}" class="card-img-top" alt="{{ $property->condo_title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $property->condo_title }}</h5>
+                            <p class="card-text">Bedrooms: {{ $property->bedrooms }}</p>
+                            <p class="card-text">Bathrooms: {{ $property->bathrooms }}</p>
+                            <p class="card-text">Max Occupancy: {{ $property->max_occupancy }}</p>
+                            <p class="card-text">Price: {{ $property->price }}฿ /Night</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         @endforeach
     </div>
 </div>
-
   @endsection
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+  <script>
+    function convertBahtToEuro() {
+      const bahtAmount = parseFloat(document.getElementById('bahtAmount').value);
+      if (!isNaN(bahtAmount)) {
+          // You can use the current exchange rate for the conversion
+          const exchangeRate = 0.026; // Replace with the actual exchange rate
+          const euroAmount = bahtAmount * exchangeRate;
+          document.getElementById('euroResult').textContent = `Converted Amount: €${euroAmount.toFixed(2)}`;
+      } else {
+          document.getElementById('euroResult').textContent = 'Please enter a valid Thai Baht amount.';
+      }
+  }
+    </script>
 
 </body>
 </html>

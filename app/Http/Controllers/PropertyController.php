@@ -54,4 +54,19 @@ public function index()
         return view('properties', compact('properties'));
     }
 
+    public function show($id)
+{
+    $property = Property::findOrFail($id);
+    return view('propertyInfo', compact('property'));
+}
+
+public function rent($id)
+{
+    $property = Property::findOrFail($id);
+    // Implement the logic to handle property rental, e.g., storing rental information in the database.
+    // You can also redirect to a payment page or any other relevant action.
+    return redirect()->back()->with('success', 'Property rented successfully.');
+}
+
+
 }
