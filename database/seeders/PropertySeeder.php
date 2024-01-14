@@ -17,6 +17,7 @@ class PropertySeeder extends Seeder
         // Seed properties data
         $propertiesData = [
             [
+                'condo_picture' => 'condo_pictures/bayHill1.JPG',
                 'condo_title' => 'Patong BayHill Suite - SeaView',
                 'bedrooms' => 1,
                 'bathrooms' => 1,
@@ -25,6 +26,7 @@ class PropertySeeder extends Seeder
                 'location' => 'Patong',
             ],
             [
+                'condo_picture' => 'condo_pictures/6thAv1.JPG',
                 'condo_title' => '6th Avenue - Suite',
                 'bedrooms' => 1,
                 'bathrooms' => 1,
@@ -33,6 +35,7 @@ class PropertySeeder extends Seeder
                 'location' => '6th Avenue',
             ],
             [
+                'condo_picture' => 'condo_pictures/Aristo2.JPG',
                 'condo_title' => 'The Aristo 2 - Big Suite',
                 'bedrooms' => 1,
                 'bathrooms' => 1,
@@ -41,6 +44,7 @@ class PropertySeeder extends Seeder
                 'location' => 'Aristo 2',
             ],
             [
+                'condo_picture' => 'condo_pictures/AristoPatong.JPG',
                 'condo_title' => 'Aristo Patong Suite - SeaView',
                 'bedrooms' => 1,
                 'bathrooms' => 1,
