@@ -102,6 +102,10 @@ font-size: 1.1rem;
 line-height: 1.6;
 color: #666;
 }
+
+.rent-button {
+            margin-left: 60px; 
+        }
     </style>
 </head>
 <body>
@@ -138,42 +142,48 @@ color: #666;
         </div>
     </div>
 </div>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rentPropertyModal">
-  Rent Property
-</button>
-
-<!-- Modal for Rent Property -->
-<div class="modal fade" id="
-rentPropertyModal" tabindex="-1" aria-labelledby="rentPropertyModalLabel" aria-hidden="true">
-
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="rentPropertyModalLabel">Rent Property</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+@if(!$isRented)
+        <button type="button" class="btn btn-primary rent-button" data-toggle="modal" data-target="#rentPropertyModal">
+            Rent Property
         </button>
-      </div>
-      <div class="modal-body">
-        @if(auth()->check())
-          <p>Click confirm to proceed with renting this property.</p>
-        @else
-          <form id="rentPropertyForm">
-            <div class="form-group">
-              <label for="renterEmail">Email address</label>
-              <input type="email" class="form-control" id="renterEmail" required>
+    @else
+        <button type="button" class="btn btn-secondary rent-button" disabled>
+            Already Booked
+        </button>
+    @endif
+    <br/>
+<!-- Modal for Rent Property -->
+<div class="modal fade" id="rentPropertyModal" tabindex="-1" aria-labelledby="rentPropertyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rentPropertyModalLabel">Rent Property</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <button type="submit" class="btn btn-primary">Confirm Rent</button>
-          </form>
-        @endif
-      </div>
+            <div class="modal-body">
+                @if(auth()->check())
+                    <p>Click confirm to proceed with renting this property.</p>
+                    <!-- Add a button here for logged-in users to confirm the rental -->
+                    <button type="button" class="btn btn-primary" id="confirmRent">Confirm Rent</button>
+                @else
+                    <form id="rentPropertyForm">
+                        <div class="form-group">
+                            <label for="renterEmail">Email address</label>
+                            <input type="email" class="form-control" id="renterEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Confirm Rent</button>
+                    </form>
+                @endif
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
+
 <br/>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
@@ -192,10 +202,19 @@ rentPropertyModal" tabindex="-1" aria-labelledby="rentPropertyModalLabel" aria-h
     </script>
     <script>
     $(document).ready(function() {
+        // Handle the form submission for non-logged-in users
         $('#rentPropertyForm').on('submit', function(e) {
             e.preventDefault();
             var email = $('#renterEmail').val();
-            // Make an AJAX call to your Laravel backend
+            sendRentRequest(email);
+        });
+
+        // Handle the button click for logged-in users
+        $('#confirmRent').on('click', function() {
+            sendRentRequest();
+        });
+
+        function sendRentRequest(email = null) {
             $.ajax({
                 url: "{{ route('property.rent', $property->id) }}",
                 type: 'POST',
@@ -204,16 +223,16 @@ rentPropertyModal" tabindex="-1" aria-labelledby="rentPropertyModalLabel" aria-h
                     _token: "{{ csrf_token() }}" // CSRF token for Laravel
                 },
                 success: function(response) {
-                    // Handle success, such as closing the modal and showing a message
+                    // Show success message
                     $('#rentPropertyModal').modal('hide');
-                    alert('Property rented successfully.');
+                    alert('Property rented successfully.'); // Replace with Bootstrap alert for better UX
                 },
                 error: function(response) {
-                    // Handle error
-                    alert('An error occurred. Please try again.');
+                    // Show error message
+                    alert('An error occurred. Please try again.'); // Replace with Bootstrap alert for better UX
                 }
             });
-        });
+        }
     });
 </script>
 @endsection

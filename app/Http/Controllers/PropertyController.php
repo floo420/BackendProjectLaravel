@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Property;
+use App\Models\Rental;
 
 class PropertyController extends Controller
 {
@@ -55,42 +56,45 @@ public function index()
     }
 
     public function show($id)
-{
-    $property = Property::findOrFail($id);
-    return view('propertyInfo', compact('property'));
-}
-
-public function rent(Request $request, $id)
-{
-    $property = Property::findOrFail($id);
-
-    if(auth()->check()) {
-        // User is logged in
-        $userId = auth()->id();
-        // Add logic to store the rental information with the user ID
-    } else {
-        // User is not logged in, capture their email from the request
-        $userEmail = $request->input('email');
-        // Validate the email or any other required fields
-        $request->validate([
-            'email' => 'required|email',
-        ]);
-        // Validate the email or any other required fields
-        $request->validate([
-            'email' => 'required|email',
-        ]);
-
-        // Add logic to store the rental information with the user email
-        // You might want to create a Rental model and table to store this data
-        $rental = new Rental; // Assuming you have a Rental model
-        $rental->property_id = $id;
-        $rental->user_email = $userEmail; // Store email if user is not logged in
-        $rental->save();
+    {
+        $property = Property::findOrFail($id);
+        $isRented = Rental::where('property_id', $id)->exists();
+        return view('propertyInfo', compact('property', 'isRented'));
     }
 
-    // Redirect back with a success message
-    return redirect()->route('properties.index')->with('success', 'Property rented successfully.');
-}
+    public function rent(Request $request, $id)
+{
+    $property = Property::findOrFail($id);
 
+    // Check if property is already rented
+    if (Rental::where('property_id', $id)->exists()) {
+        \Log::info('Attempted to rent an already rented property.');
+        return response()->json(['error' => 'Property is already rented.'], 409); // 409 Conflict
+    }
+
+    try {
+        $rental = new Rental;
+        $rental->property_id = $id;
+
+        if(auth()->check()) {
+            // Logic for logged-in users
+            $user = auth()->user(); // Getting the authenticated user
+            $rental->user_id = $user->id; // Storing user ID
+            $rental->user_email = $user->email; // Storing user email from authenticated user
+            \Log::info('Rental stored for user ID: ' . $user->id);
+        } else {
+            // User is not logged in, capture their email
+            $request->validate(['email' => 'required|email']);
+            $rental->user_email = $request->input('email'); // Storing user email from form input
+            \Log::info('Rental stored for email: ' . $request->input('email'));
+        }
+
+        $rental->save();
+        return response()->json(['success' => 'Property rented successfully.']);
+    } catch (\Exception $e) {
+        \Log::error('Rent Error: ' . $e->getMessage());
+        return response()->json(['error' => 'An error occurred.'], 500);
+    }
+}
 
 }

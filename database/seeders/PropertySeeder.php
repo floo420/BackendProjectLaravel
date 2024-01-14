@@ -23,7 +23,7 @@ class PropertySeeder extends Seeder
                 'bathrooms' => 1,
                 'max_occupancy' => 3,
                 'price' => 2000.00,
-                'location' => 'Patong',
+                'location' => 'Phuket - Patong',
             ],
             [
                 'condo_picture' => 'condo_pictures/6thAv1.JPG',
@@ -32,7 +32,7 @@ class PropertySeeder extends Seeder
                 'bathrooms' => 1,
                 'max_occupancy' => 3,
                 'price' => 1500.00,
-                'location' => 'Bangtao',
+                'location' => 'Phuket - Bangtao',
             ],
             [
                 'condo_picture' => 'condo_pictures/Aristo2.JPG',
@@ -41,7 +41,7 @@ class PropertySeeder extends Seeder
                 'bathrooms' => 1,
                 'max_occupancy' => 4,
                 'price' => 2000.00,
-                'location' => 'Surin/Bangtao',
+                'location' => 'Phuket - Surin/Bangtao',
             ],
             [
                 'condo_picture' => 'condo_pictures/AristoPatong.JPG',
@@ -50,7 +50,7 @@ class PropertySeeder extends Seeder
                 'bathrooms' => 1,
                 'max_occupancy' => 3,
                 'price' => 2500.00,
-                'location' => 'Patong',
+                'location' => 'Phuket - Patong',
             ],
         ];
 
