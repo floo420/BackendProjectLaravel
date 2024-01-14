@@ -60,12 +60,36 @@ public function index()
     return view('propertyInfo', compact('property'));
 }
 
-public function rent($id)
+public function rent(Request $request, $id)
 {
     $property = Property::findOrFail($id);
-    // Implement the logic to handle property rental, e.g., storing rental information in the database.
-    // You can also redirect to a payment page or any other relevant action.
-    return redirect()->back()->with('success', 'Property rented successfully.');
+
+    if(auth()->check()) {
+        // User is logged in
+        $userId = auth()->id();
+        // Add logic to store the rental information with the user ID
+    } else {
+        // User is not logged in, capture their email from the request
+        $userEmail = $request->input('email');
+        // Validate the email or any other required fields
+        $request->validate([
+            'email' => 'required|email',
+        ]);
+        // Validate the email or any other required fields
+        $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        // Add logic to store the rental information with the user email
+        // You might want to create a Rental model and table to store this data
+        $rental = new Rental; // Assuming you have a Rental model
+        $rental->property_id = $id;
+        $rental->user_email = $userEmail; // Store email if user is not logged in
+        $rental->save();
+    }
+
+    // Redirect back with a success message
+    return redirect()->route('properties.index')->with('success', 'Property rented successfully.');
 }
 
 

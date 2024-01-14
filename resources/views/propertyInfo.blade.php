@@ -139,6 +139,39 @@ color: #666;
     </div>
 </div>
 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rentPropertyModal">
+  Rent Property
+</button>
+
+<!-- Modal for Rent Property -->
+<div class="modal fade" id="
+rentPropertyModal" tabindex="-1" aria-labelledby="rentPropertyModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentPropertyModalLabel">Rent Property</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        @if(auth()->check())
+          <p>Click confirm to proceed with renting this property.</p>
+        @else
+          <form id="rentPropertyForm">
+            <div class="form-group">
+              <label for="renterEmail">Email address</label>
+              <input type="email" class="form-control" id="renterEmail" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Rent</button>
+          </form>
+        @endif
+      </div>
+    </div>
+  </div>
+</div>
+
 <br/>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -157,9 +190,32 @@ color: #666;
       }
   }
     </script>
-
-<!-- Initialize Slick Carousel for the gallery -->
-
+    <script>
+    $(document).ready(function() {
+        $('#rentPropertyForm').on('submit', function(e) {
+            e.preventDefault();
+            var email = $('#renterEmail').val();
+            // Make an AJAX call to your Laravel backend
+            $.ajax({
+                url: "{{ route('property.rent', $property->id) }}",
+                type: 'POST',
+                data: {
+                    email: email,
+                    _token: "{{ csrf_token() }}" // CSRF token for Laravel
+                },
+                success: function(response) {
+                    // Handle success, such as closing the modal and showing a message
+                    $('#rentPropertyModal').modal('hide');
+                    alert('Property rented successfully.');
+                },
+                error: function(response) {
+                    // Handle error
+                    alert('An error occurred. Please try again.');
+                }
+            });
+        });
+    });
+</script>
 @endsection
 
 </body>
