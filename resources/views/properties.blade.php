@@ -9,32 +9,67 @@
 
   
   <style>
-    /*slogan*/
-.sloganH1 {
-    font-size: 40px; 
-    font-weight: 600; 
-    color: #333; 
-    text-align: center;
-}
-.sloganH2 {
-    font-size: 30px; 
-    font-weight: 600; 
-    color: #333; 
-    text-align: center;
-}
-.sloganH3 {
-    font-size: 25px; 
-    font-weight: 600; 
-    color: #333; 
-    text-align: center;
-}
+   .container {
+            padding: 0;
+        }
+        .form-inline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-group {
+            margin-right: 10px;
+        }
 
-.center-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh; 
-    }
+        /* Improve typography */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        .sloganH1 {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+        .sloganH2 {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sloganH3 {
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Style property cards */
+        .card {
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-img-top {
+            object-fit: cover;
+            height: 250px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        .card-text {
+            font-size: 16px;
+        }
+        .card-footer {
+            background-color: #f8f9fa;
+        }
   </style>
 </head>
 <body>

@@ -22,7 +22,7 @@ class PropertySeeder extends Seeder
                 'bedrooms' => 1,
                 'bathrooms' => 1,
                 'max_occupancy' => 3,
-                'price' => 2000.00,
+                'price' => 52.00,
                 'location' => 'Patong',
             ],
             [
@@ -31,7 +31,7 @@ class PropertySeeder extends Seeder
                 'bedrooms' => 1,
                 'bathrooms' => 1,
                 'max_occupancy' => 3,
-                'price' => 1500.00,
+                'price' => 40.00,
                 'location' => '6th Avenue',
             ],
             [
@@ -40,7 +40,7 @@ class PropertySeeder extends Seeder
                 'bedrooms' => 1,
                 'bathrooms' => 1,
                 'max_occupancy' => 4,
-                'price' => 2000.00,
+                'price' => 52.00,
                 'location' => 'Aristo 2',
             ],
             [
@@ -49,7 +49,7 @@ class PropertySeeder extends Seeder
                 'bedrooms' => 1,
                 'bathrooms' => 1,
                 'max_occupancy' => 3,
-                'price' => 2500.00,
+                'price' => 65.00,
                 'location' => 'Patong',
             ],
         ];
