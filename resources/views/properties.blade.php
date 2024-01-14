@@ -84,7 +84,7 @@
                         <p class="card-text">Bedrooms: {{ $property->bedrooms }}</p>
                         <p class="card-text">Bathrooms: {{ $property->bathrooms }}</p>
                         <p class="card-text">Max Occupancy: {{ $property->max_occupancy }}</p>
-                        <p class="card-text">Price: ${{ $property->price }}</p>
+                        <p class="card-text">Price: ${{ $property->price }} /Night</p>
                     </div>
                 </div>
             </div>

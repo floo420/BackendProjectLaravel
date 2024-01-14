@@ -24,7 +24,7 @@
           <a class="nav-link" href="{{ route('properties') }}">Properties</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tab-flexbox">Rent</a>
+          <a class="nav-link" href="{{ route('property.create') }}">Rent</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('about') }}">About-Us</a>
