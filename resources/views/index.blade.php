@@ -415,7 +415,7 @@ border-bottom-right-radius: 12px;
                 
               </div>
               <div class="card__img"></div>
-              <a href="RentOut.html" class="card_link">
+              <a href="{{ route('property.create') }}" class="card_link">
                  <div class="card__img--hover"></div>
                </a>
               <div class="card__info">
@@ -431,7 +431,7 @@ border-bottom-right-radius: 12px;
         <section class="et-slide" id="tab-react">
           <div class="overlay3">
             <div class="centered-content">
-          <h1 style="color: white;">About-us</h1>
+          <h1 style="color: white;">About</h1>
           <div class="cards">
             <article class="card card--3">
               <div class="card__info-hover">
@@ -445,7 +445,7 @@ border-bottom-right-radius: 12px;
                 
               </div>
               <div class="card__img"></div>
-              <a href="#" class="card_link">
+              <a href="{{ route('about') }}" class="card_link">
                  <div class="card__img--hover"></div>
                </a>
               <div class="card__info">
@@ -461,7 +461,7 @@ border-bottom-right-radius: 12px;
         <section class="et-slide" id="tab-angular">
           <div class="overlay4">
             <div class="centered-content">
-          <h1 style="color: white;">About-Us</h1>
+          <h1 style="color: white;">FAQ</h1>
           <div class="cards">
             <article class="card card--4">
               <div class="card__info-hover">
@@ -475,7 +475,7 @@ border-bottom-right-radius: 12px;
                 
               </div>
               <div class="card__img"></div>
-              <a href="#" class="card_link">
+              <a href="{{ route('faqPage') }}" class="card_link">
                  <div class="card__img--hover"></div>
                </a>
               <div class="card__info">
@@ -523,29 +523,29 @@ border-bottom-right-radius: 12px;
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3">
-        <h5 class="text-uppercase mb-4">About Us</h5>
+        <h5 class="text-uppercase mb-4">About</h5>
         <p>We provide top-quality rental services to meet your needs in Thailand.</p>
       </div>
 
       <div class="col-md-4 mb-3">
         <h5 class="text-uppercase mb-4">Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none text-light">Home</a></li>
-          <li><a href="#" class="text-decoration-none text-light">Rentals</a></li>
-          <li><a href="#" class="text-decoration-none text-light">About</a></li>
-          <li><a href="#" class="text-decoration-none text-light">Contact</a></li>
+          <li><a href="{{ route('homePageUsers') }}" class="text-decoration-none text-light">Home</a></li>
+          <li><a href="{{ route('properties') }}" class="text-decoration-none text-light">Properties</a></li>
+          <li><a href="{{ route('about') }}" class="text-decoration-none text-light">About</a></li>
+          <li><a href="{{ route('contact.form') }}" class="text-decoration-none text-light">Contact</a></li>
         </ul>
       </div>
 
       <div class="col-md-4 mb-3">
         <h5 class="text-uppercase mb-4">Contact Us</h5>
-        <p>Email: info@rentalwebsite.com</p>
+        <p>Email: florian.brasseur@student.ehb.be</p>
         <p>Phone: +1234567890</p>
       </div>
     </div>
 
     <div class="footer-bottom text-center pt-3">
-      &copy; 2023 Rental Website | Designed by YourName
+      &copy; 2023 Rental Website | Designed by Florian Brasseur
     </div>
   </div>
 </footer>
