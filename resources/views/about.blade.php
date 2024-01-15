@@ -31,6 +31,8 @@
         <li>YouTube: For learning and tutorials</li>
         <li>CodePen: For design inspiration and prototyping</li>
         <li>W3Schools: For web development references</li>
+        <br/>
+        <li><a href="https://github.com/floo420/BackendProjectLaravel.git">GitHub Repository</a></li>
     </ul>
 
     <h2>Credits</h2>
