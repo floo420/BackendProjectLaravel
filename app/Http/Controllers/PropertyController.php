@@ -96,5 +96,14 @@ public function index()
         return response()->json(['error' => 'An error occurred.'], 500);
     }
 }
+public function manageProperties()
+    {
+        // Retrieve properties along with rental status and user email
+        $properties = Property::leftJoin('rentals', 'properties.id', '=', 'rentals.property_id')
+            ->select('properties.*', 'rentals.user_email')
+            ->get();
+
+        return view('manageProperties', compact('properties'));
+    }
 
 }

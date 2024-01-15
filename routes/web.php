@@ -40,8 +40,7 @@ Route::get('properties', function () {
 Route::get('properties', [PropertyController::class, 'index'])->name('properties');
 Route::get('/property/{id}', [PropertyController::class, 'show'])->name('property.show');
 Route::post('/property/rent/{id}', [PropertyController::class, 'rent'])->name('property.rent');
-
-
+Route::get('/manage-properties', [PropertyController::class, 'manageProperties'])->name('manage.properties');
 
 Route::get('loginPage', function () {
     return view('login'); 

@@ -83,6 +83,9 @@
               <!-- Show this dropdown item only if the user is an admin -->
               <li><a class="dropdown-item" href="{{ route('admin.manage.users') }}">Manage users</a></li>
             @endif
+            @if(auth()->user()->is_admin)
+              <li><a class="dropdown-item" href="{{ route('manage.properties') }}">Manage Properties</a></li>
+            @endif
             <li><a class="dropdown-item" href="{{ route('forgot-password') }}">Modify password</a></li>
             <li>
                 <form action="{{ route('logout') }}" method="POST">
