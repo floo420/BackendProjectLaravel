@@ -318,7 +318,7 @@ border-bottom-right-radius: 12px;
           <a class="nav-link" href="#tab-flexbox">Rent</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#tab-react">About-Us</a>
+          <a class="nav-link" href="#tab-react">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#tab-angular">FAQ</a>
@@ -493,7 +493,7 @@ border-bottom-right-radius: 12px;
         <section class="et-slide" id="tab-react">
           <div class="overlay3">
             <div class="centered-content">
-          <h1 style="color: white;">About-Us</h1>
+          <h1 style="color: white;">About</h1>
           <div class="cards">
             <article class="card card--3">
               <div class="card__info-hover">
@@ -586,29 +586,29 @@ border-bottom-right-radius: 12px;
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3">
-        <h5 class="text-uppercase mb-4">About Us</h5>
+        <h5 class="text-uppercase mb-4">About</h5>
         <p>We provide top-quality rental services to meet your needs in Thailand.</p>
       </div>
 
       <div class="col-md-4 mb-3">
         <h5 class="text-uppercase mb-4">Quick Links</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none text-light">Home</a></li>
-          <li><a href="#" class="text-decoration-none text-light">Rentals</a></li>
-          <li><a href="#" class="text-decoration-none text-light">About</a></li>
-          <li><a href="#" class="text-decoration-none text-light">Contact</a></li>
+          <li><a href="{{ route('homePageUsers') }}" class="text-decoration-none text-light">Home</a></li>
+          <li><a href="{{ route('properties') }}" class="text-decoration-none text-light">Properties</a></li>
+          <li><a href="{{ route('about') }}" class="text-decoration-none text-light">About</a></li>
+          <li><a href="{{ route('contact.form') }}" class="text-decoration-none text-light">Contact</a></li>
         </ul>
       </div>
 
       <div class="col-md-4 mb-3">
         <h5 class="text-uppercase mb-4">Contact Us</h5>
-        <p>Email: info@rentalwebsite.com</p>
+        <p>Email: florian.brasseur@student.ehb.be</p>
         <p>Phone: +1234567890</p>
       </div>
     </div>
 
     <div class="footer-bottom text-center pt-3">
-      &copy; 2023 Rental Website | Designed by YourName
+      &copy; 2023 Rental Website | Designed by Florian Brasseur
     </div>
   </div>
 </footer>

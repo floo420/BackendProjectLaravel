@@ -27,7 +27,7 @@
           <a class="nav-link" href="{{ route('property.create') }}">Rent</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('about') }}">About-Us</a>
+          <a class="nav-link" href="{{ route('about') }}">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('faqPage') }}">FAQ</a>
