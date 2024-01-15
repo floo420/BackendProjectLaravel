@@ -290,6 +290,13 @@ border-bottom-right-radius: 12px;
   #myCarousel .carousel-inner .carousel-item img {
     height: 700px; /* Use a height that fits well within the carousel */
   }
+  .avatar-circle {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center center;
+}
 
     </style>
     
@@ -350,7 +357,10 @@ border-bottom-right-radius: 12px;
     </div>
     <div class="navbar-nav ml-auto">
     @auth
-        <!-- Show Log Out for logged-in users -->
+        <!-- Show Log Out for logged-in users and avatar if auth-->
+        @if(auth()->user()->avatar)
+        <img src="{{ asset('storage/' . auth()->user()->avatar) }}" alt="User Avatar" class="avatar-circle">
+        @endif
         <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button type="submit" class="btn btn-link nav-link">Log Out</button>

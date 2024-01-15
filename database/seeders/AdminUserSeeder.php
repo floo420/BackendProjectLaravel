@@ -21,7 +21,9 @@ class AdminUserSeeder extends Seeder
             'password' => Hash::make('Password!321'),
             'phone' => '123456789',
             'is_admin' => true,
-            // Add other fields as needed (birthdate, about_me, avatar, etc.)
+            'birthdate' => '1990-01-01', 
+            'about_me' => 'I am the admin user.', 
+            'avatar' => 'avatars/Jeff.jpg',            
             'created_at' => now(),
             'updated_at' => now(),
         ]);

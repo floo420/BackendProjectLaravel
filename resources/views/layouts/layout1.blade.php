@@ -6,6 +6,16 @@
     <title>@yield('title', 'Your Page Title')</title>
     <!-- Include your CSS and other head elements here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .avatar-circle {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center center;
+}
+
+      </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,7 +69,10 @@
     </div>
     <div class="navbar-nav ml-auto">
     @auth
-        <!-- Show Log Out for logged-in users -->
+        <!-- Show Log Out for logged-in users and avatar-->
+        @if(auth()->user()->avatar)
+        <img src="{{ asset('storage/' . auth()->user()->avatar) }}" alt="User Avatar" class="avatar-circle">
+        @endif
         <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button type="submit" class="btn btn-link nav-link">Log Out</button>
@@ -103,7 +116,7 @@
   </div>
 </nav>
 
-@yield('content') <!-- This is where the content of your views will be injected -->
+@yield('content') 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
