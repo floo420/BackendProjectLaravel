@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
             // Add other seeders here
             AdminUserSeeder::class,
             PropertySeeder::class,
+            NewsSeeder::class,
+            FaqCategoriesSeeder::class,
+            FaqsSeeder::class,
         ]);
     }
 }
