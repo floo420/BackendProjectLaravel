@@ -13,7 +13,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1 class="text-center">About Us</h1>
+    <h1 class="text-center">About</h1>
     <p>Welcome to Thai Condo Rentals, your trusted source for high-quality condominium rentals in Thailand.</p>
 
     <h2>Introduction</h2>
