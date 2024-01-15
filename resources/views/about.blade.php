@@ -14,8 +14,6 @@
 @section('content')
 <div class="container mt-5">
     <h1 class="text-center">About</h1>
-    <p>Welcome to Thai Condo Rentals, your trusted source for high-quality condominium rentals in Thailand.</p>
-
     <h2>Introduction</h2>
     <p>Thai Condo Rentals was founded from our personal experience and desire to improve the rental process for property owners and tenants in Thailand. As a family owning multiple condominiums in Thailand, we've faced the difficulties associated with traditional rental agencies, particularly in the wake of the COVID-19 pandemic. This inspired us to establish a platform where property owners can effortlessly list and rent their properties, while tenants can easily discover their perfect condominiums without any hassle.</p>
 
